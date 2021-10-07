@@ -4,7 +4,7 @@ name: Deploy DynamoDB CRUD API
 # events but only for the main branch
 on:
   push:
-    branches: [ jsingletary ]
+    branches: [ jsingletary, master ]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +34,7 @@ jobs:
       run: yarn install
 
     - name: serverless deploy
-      uses: serverless/github-action@master
+      uses: serverless/github-action@jsingletary
       with:
         args: deploy
       env:
